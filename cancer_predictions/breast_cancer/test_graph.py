@@ -25,6 +25,7 @@ df['diagnosis'].value_counts()
 
 # Criação do gráfico com PX
 fig = px.bar(
+    #df['diagnosis'].value_counts().reset_index().sort_values(by='count')
     df['diagnosis'].value_counts().reset_index(),x='diagnosis',
     y='count', title='Contagem de M e B', color='diagnosis',
     orientation='v', labels={'diagnosis': 'Diagnóstico', 'count': 'Contagem'},)
@@ -58,3 +59,11 @@ plt.title('Contagem de M e B')
 ax = sns.barplot(data=df['diagnosis'].value_counts().reset_index(), y='count', x='diagnosis', hue='diagnosis', palette={'M': 'red', 'B': 'blue'})
 ax.set(xlabel='Diagnóstico', ylabel='Contagem')
 plt.title('Contagem de M e B')
+
+# Corr
+# check correlation values
+fig = px.imshow(df.corr().round(1), text_auto=True,
+                labels=dict(color="Correlation"),
+                aspect='auto')
+# fig.update_xaxes(tickangle=270)
+fig.update_layout(width=1200,height=900)
