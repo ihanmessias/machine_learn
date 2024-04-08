@@ -1,4 +1,0 @@
-base: https://www.kaggle.com/datasets/sajidsaifi/prostate-cancer
-others: https://www.kaggle.com/code/imkrkannan/prostate-cancer-prediction-using-ml-algorithms | https://www.kaggle.com/code/alihantabak/prostate-cancer-predictions-with-ml-and-dl-methods
-
-note: template breast cancer
